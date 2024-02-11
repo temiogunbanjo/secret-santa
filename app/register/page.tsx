@@ -3,6 +3,8 @@ import Image from "next/image";
 import { ChangeEvent, FormEvent, useState } from "react";
 import seasonsConfig from "@/constants/seasons.config";
 import Input from "@/components/units/Input";
+import { createSpace } from "@/redux/actions/db.actions";
+import { SpaceDTO } from "@/types/SpaceDTO";
 
 export default function Register() {
   const a = seasonsConfig(new Date().getMonth());
@@ -10,12 +12,9 @@ export default function Register() {
   const [hasCreatedSpace, setHasCreatedSpace] = useState(false);
   const [spaceName, setSpaceName] = useState("");
 
-  const submitHandler = (ev: FormEvent) => {
+  const submitHandler = async (ev: FormEvent) => {
     ev.preventDefault();
-    window.localStorage.setItem(
-      localState["spaceName"].toLowerCase(),
-      JSON.stringify({ ...localState, people: [] })
-    );
+    await createSpace(localState as SpaceDTO);
     setHasCreatedSpace(true);
     setSpaceName(localState["spaceName"].toLowerCase());
   };
@@ -77,9 +76,13 @@ export default function Register() {
           <div className="flex flex-row items-center lg:min-w-[360px]">
             {a && (
               <h1 className="mr-14 min-w-48 capitalize">
-                <span className="font-normal text-xl lg:text-2xl">{a.superText}</span>
+                <span className="font-normal text-xl lg:text-2xl">
+                  {a.superText}
+                </span>
                 <br />
-                <span className="text-4xl lg:text-5xl font-semibold">{a.emphasisText}</span>
+                <span className="text-4xl lg:text-5xl font-semibold">
+                  {a.emphasisText}
+                </span>
               </h1>
             )}
             {a && (
@@ -125,7 +128,8 @@ export default function Register() {
             </span>
           </h2>
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Spaces and all exciting things to do in an interactive course!
+            Learn about Spaces and all exciting things to do in an interactive
+            course!
           </p>
         </a>
 

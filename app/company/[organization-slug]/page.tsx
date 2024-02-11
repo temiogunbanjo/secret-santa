@@ -4,6 +4,7 @@ import Input from "@/components/units/Input";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import PersonPicker from "@/components/units/PersonPicker";
 
 export default function OrganizationHome() {
   const a = seasonsConfig(new Date().getMonth());
@@ -123,7 +124,7 @@ export default function OrganizationHome() {
       ) : (
         <div className="flex flex-col gap-10 z-10 lg:max-w-5xl w-full min-h-[200px] items-center justify-center font-mono text-sm mb-14">
           <h2 className="font-bold text-2xl text-center">{`${spaceInfo?.people?.length} members in ${spaceInfo?.spaceName}`}</h2>
-          <div className="grid justify-center items-center gap-8 grid-cols-4 lg:grid-cols-6">
+          <div className="grid w-auto justify-center items-center gap-8 grid-cols-4 lg:grid-cols-6">
             {spaceInfo?.people?.map((p: any, i: number) => (
               <div
                 key={i}
@@ -133,6 +134,9 @@ export default function OrganizationHome() {
               </div>
             ))}
           </div>
+
+          {/* <PersonPicker people={["Alice", "Bob", "Charlie", "David", "Eve"]} /> */}
+  
           <div className="flex flex-col gap-4">
             <span className="text-center">
               Hurray! You have been paired with{" "}
