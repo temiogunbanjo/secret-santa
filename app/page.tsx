@@ -35,10 +35,10 @@ export default function Home() {
       <div className="relative z-[-1] flex place-items-center pt-4 lg:pt-0 h-[250px] lg:h-auto before:absolute before:h-[300px] before:lg:h-[360px] before:w-full sm:before:w-[480px] before:-translate-x-[20%] before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-[100%] after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-red-700 before:dark:opacity-10 after:dark:from-pink-900 after:dark:via-[#ff0195] after:dark:opacity-40">
         <div className="flex flex-row items-center lg:min-w-[360px]">
           {a && (
-            <h1 className="mr-14 min-w-48 capitalize">
-              <span className="font-normal text-2xl">{a.superText}</span>
+            <h1 className="mr-10 lg:mr-14 min-w-48 capitalize">
+              <span className="font-normal text-xl lg:text-2xl">{a.superText}</span>
               <br />
-              <span className="text-5xl font-semibold">{a.emphasisText}</span>
+              <span className="text-4xl lg:text-5xl font-semibold">{a.emphasisText}</span>
             </h1>
           )}
           {a && (
@@ -73,7 +73,7 @@ export default function Home() {
         </a>
 
         <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          href="#learn"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
@@ -85,7 +85,8 @@ export default function Home() {
             </span>
           </h2>
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
+            Learn about Spaces and all exciting things to do in an interactive
+            course!
           </p>
         </a>
 

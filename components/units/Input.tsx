@@ -4,6 +4,7 @@ type InputProps = {
   label?: string;
   id?: string;
   name?: string;
+  type?: "email" | "tel" | "text" | "password" | "date";
   placeholder?: string;
   onChange?: ChangeEventHandler | ((ev: ChangeEvent) => void);
   required?: boolean | undefined

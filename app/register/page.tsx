@@ -39,6 +39,7 @@ export default function Register() {
             <Input
               label="Email Address"
               name="email"
+              type="email"
               placeholder="e.g. johndoe@gmail.com"
               onChange={handleChange("email")}
               required
