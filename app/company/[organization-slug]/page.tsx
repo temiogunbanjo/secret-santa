@@ -45,8 +45,8 @@ export default function OrganizationHome() {
   }, [spaceName]);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex my-4">
+    <main className="flex min-h-screen flex-col items-center justify-between py-14 px-14 md:px-24 md:py-24 overflow-x-hidden">
+      <div className="flex flex-col-reverse gap-10 lg:gap-0 lg:flex-row z-10 lg:max-w-5xl w-full items-center justify-between font-mono text-sm my-4">
         {!isMember ? (
           <form
             onSubmit={submitHandler}
@@ -75,20 +75,28 @@ export default function OrganizationHome() {
             </button>
           </form>
         ) : (
-          <div></div>
+          <div className="flex items-center text-center lg:text-left h-[300px]">
+            Hurray! Salome is your secret valentine...
+          </div>
         )}
 
         <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:lg:h-[360px] before:w-full sm:before:w-[480px] before:-translate-x-[20%] before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-[100%] after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-red-700 before:dark:opacity-10 after:dark:from-pink-900 after:dark:via-[#ff0195] after:dark:opacity-40">
           <div className="flex flex-row items-center lg:min-w-[360px]">
             {a && (
               <h1 className="mr-14 min-w-48 capitalize">
-                <span className="font-normal text-2xl">{a.superText}</span>
+                <span className="font-normal text-xl lg:text-2xl">
+                  {a.superText}
+                </span>
                 <br />
-                <span className="text-5xl font-semibold">{a.emphasisText}</span>
+                <span className="text-4xl lg:text-5xl font-semibold">
+                  {a.emphasisText}
+                </span>
                 {spaceName && (
                   <>
                     <br />
-                    <span className="font-light text-xl mt-1 text-right inline-block w-full text-yellow-500">{`For ${spaceInfo?.spaceName}`}</span>
+                    <span className="font-light text-md lg:text-xl mt-1 text-right inline-block w-full text-yellow-500">{`For ${
+                      spaceInfo?.spaceName || "..."
+                    }`}</span>
                   </>
                 )}
               </h1>
@@ -109,68 +117,53 @@ export default function OrganizationHome() {
 
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-3 lg:text-left">
         <a
-          href="/"
+          href="#learn"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+          // target="_blank"
+          // rel="noopener noreferrer"
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Create Your Space{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
+          <h2 className={`mb-3 text-xl lg:text-2xl font-semibold`}>
             Learn{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
           </h2>
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
+            Learn about Spaces and all exciting things to do in an interactive
+            course!
           </p>
         </a>
 
-        {/* <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+        <a
+          href="/register"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
+          <h2 className={`mb-3 text-xl lg:text-2xl font-semibold`}>
+            Create A Space{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
           </h2>
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
+            A space is a group that you create where several people can be
+            added. Learn more on our home page.
           </p>
-        </a> */}
+        </a>
 
         <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          href="#share"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
+          <h2 className={`mb-3 text-xl lg:text-2xl font-semibold`}>
+            Share{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
           </h2>
           <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
+            Instantly get your friends & family to join your space using your space URL.
           </p>
         </a>
       </div>
