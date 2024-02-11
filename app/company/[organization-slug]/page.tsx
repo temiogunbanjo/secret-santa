@@ -69,7 +69,7 @@ export default function OrganizationHome() {
             />
             <button
               type="submit"
-              className="mt-2 bg-zinc-800 hover:dark:bg-red-700 rounded-md px-2 py-2 outline-none"
+              className="mt-3 bg-zinc-800 hover:dark:bg-red-700 rounded-md px-2 py-2 outline-none"
             >
               {`Join ${spaceInfo?.spaceName || ""}`}
             </button>

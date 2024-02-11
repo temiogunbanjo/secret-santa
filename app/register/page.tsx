@@ -52,16 +52,16 @@ export default function Register() {
             />
             <button
               type="submit"
-              className="mt-2 bg-zinc-800 hover:dark:bg-red-700 rounded-md px-2 py-2 outline-none"
+              className="mt-3 bg-zinc-800 hover:dark:bg-red-700 rounded-md px-2 py-2 outline-none"
             >
               Create
             </button>
           </form>
         ) : (
-          <div className="lg:relative flex flex-col gap-2 w-full lg:max-w-[400px] lg:min-w-[300px] justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pt-6 pb-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:rounded-xl lg:border lg:bg-gray-200 p-6 lg:dark:bg-zinc-800/30">
+          <div className="lg:relative flex flex-col gap-2 w-full lg:max-w-[380px] lg:min-w-[300px] justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pt-6 pb-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:rounded-xl lg:border lg:bg-gray-200 p-6 lg:dark:bg-zinc-800/30">
             <p className="mb-4 text-xl">Awesome! Your space is live now</p>
             <a
-              href={`${window.location.hostname}/company/${spaceName}`}
+              href={`${window.location.origin}/company/${spaceName}`}
               className="inline-block font-mono font-normal border-b border-zinc-700"
             >
               {`${window.location.origin}/company/${spaceName}`}
@@ -76,9 +76,9 @@ export default function Register() {
           <div className="flex flex-row items-center lg:min-w-[360px]">
             {a && (
               <h1 className="mr-14 min-w-48 capitalize">
-                <span className="font-normal text-2xl">{a.superText}</span>
+                <span className="font-normal text-xl lg:text-2xl">{a.superText}</span>
                 <br />
-                <span className="text-5xl font-semibold">{a.emphasisText}</span>
+                <span className="text-4xl lg:text-5xl font-semibold">{a.emphasisText}</span>
               </h1>
             )}
             {a && (

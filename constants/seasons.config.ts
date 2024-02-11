@@ -8,9 +8,9 @@ const seasonsConfig = (month: number) => {
       emphasisText: "Valentine",
     },
     3: {
-      img: "/val.png",
-      superText: "",
-      emphasisText: "Valentine",
+      img: "/clown.png",
+      superText: "April",
+      emphasisText: "Fool's Day",
     },
     11: {
       img: "/santa.png",
