@@ -17,7 +17,7 @@ export default function OrganizationHome() {
     ev.preventDefault();
     if (spaceInfo?.spaceName) {
       window.localStorage.setItem(
-        spaceInfo?.spaceName,
+        spaceInfo?.spaceName?.toLowerCase(),
         JSON.stringify({
           ...spaceInfo,
           people: ([] as { [x: string]: any })
