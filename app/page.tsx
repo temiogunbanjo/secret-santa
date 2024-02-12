@@ -1,6 +1,13 @@
 import Image from "next/image";
-
+import { Poppins } from "next/font/google";
 import seasonsConfig from "@/constants/seasons.config";
+import MainText from "@/components/units/MainText";
+import FooterLink from "@/components/units/FooterLink";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+});
 
 export default function Home() {
   const a = seasonsConfig(new Date().getMonth());
@@ -34,13 +41,7 @@ export default function Home() {
 
       <div className="relative z-[-1] flex place-items-center pt-4 lg:pt-0 h-[250px] lg:h-auto before:absolute before:h-[300px] before:lg:h-[360px] before:w-full sm:before:w-[480px] before:-translate-x-[20%] before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-[100%] after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-red-700 before:dark:opacity-10 after:dark:from-pink-900 after:dark:via-[#ff0195] after:dark:opacity-40">
         <div className="flex flex-row items-center lg:min-w-[360px]">
-          {a && (
-            <h1 className="mr-10 lg:mr-14 min-w-48 capitalize">
-              <span className="font-normal text-xl lg:text-2xl">{a.superText}</span>
-              <br />
-              <span className="text-4xl lg:text-5xl font-semibold">{a.emphasisText}</span>
-            </h1>
-          )}
+          {a && <MainText />}
           {a && (
             <Image
               className="relative dark:drop-shadow-[0_1px_0.1rem_#fffefe70] dark"
@@ -55,40 +56,19 @@ export default function Home() {
       </div>
 
       <div className="mt-8 mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-3 lg:text-left">
-        <a
-          href="/register"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          // target="self"
-        >
-          <h2 className={`mb-3 text-xl lg:text-2xl font-semibold`}>
-            Create A Space{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            A space is a group that you create where several people can be
-            added.
-          </p>
-        </a>
+        <FooterLink
+          url="/register"
+          description="A space is a group that you create where several people can be added."
+          title={"Create Space"}
+        />
 
-        <a
-          href="#learn"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+        <FooterLink
+          url="#learn"
           target="_blank"
           rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-xl lg:text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Spaces and all exciting things to do in an interactive
-            course!
-          </p>
-        </a>
+          description="Learn about Spaces and all exciting things to do in an interactive course!"
+          title={"Learn"}
+        />
 
         {/* <a
           href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
@@ -107,22 +87,13 @@ export default function Home() {
           </p>
         </a> */}
 
-        <a
-          href="tel:+2349059620514"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+        <FooterLink
+          url="tel:+2349059620514"
           target="_blank"
           rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-xl lg:text-2xl font-semibold`}>
-            Contact Us{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly reach us by phone to say a quick hello.
-          </p>
-        </a>
+          description="Instantly reach us by phone to say a quick hello."
+          title={"Contact Us"}
+        />
       </div>
     </main>
   );
