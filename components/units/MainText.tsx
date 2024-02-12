@@ -10,7 +10,7 @@ function MainText({ spaceName }: { spaceName?: string }) {
         {a.superText}
       </span>
       <br />
-      <span className="text-4xl lg:text-5xl font-semibold">
+      <span className="text-5xl lg:text-5xl font-semibold">
         {a.emphasisText}
       </span>
       {spaceName && (
