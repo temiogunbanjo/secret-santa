@@ -27,7 +27,7 @@ export default function Register() {
     };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between py-14 px-14 md:px-24 md:py-24 overflow-x-hidden">
+    <main className="flex min-h-screen flex-col items-center justify-between py-14 px-12 md:px-24 md:py-24 overflow-x-hidden">
       <div className="flex flex-col-reverse gap-10 lg:gap-0 lg:flex-row max-w-5xl z-10 w-full items-center justify-between text-sm my-4">
         {!hasCreatedSpace ? (
           <form

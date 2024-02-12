@@ -45,7 +45,7 @@ export default function ViewOrganization() {
   }, [spaceName]);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between py-14 px-14 md:px-24 md:py-24 overflow-x-hidden">
+    <main className="flex min-h-screen flex-col items-center justify-between py-14 px-12 md:px-24 md:py-24 overflow-x-hidden">
       <div className="flex flex-col-reverse gap-10 lg:gap-0 lg:flex-row z-10 lg:max-w-5xl w-full items-center justify-between text-sm mb-8">
         <form
           onSubmit={submitHandler}

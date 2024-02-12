@@ -22,7 +22,7 @@ export default function OrganizationHome() {
   }, [spaceName]);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between py-14 px-14 md:px-24 md:py-24 overflow-x-hidden">
+    <main className="flex min-h-screen flex-col items-center justify-between py-14 px-12 md:px-24 md:py-24 overflow-x-hidden">
       <div className="flex flex-col gap-10 z-10 lg:max-w-5xl w-full min-h-[200px] items-center justify-center font-sans text-sm mb-14">
         <h2 className="font-bold text-2xl text-center">{`${spaceInfo?.people?.length} members in ${spaceInfo?.spaceName}`}</h2>
         <div className="flex -space-x-4 rtl:space-x-reverse w-auto">
