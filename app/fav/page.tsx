@@ -15,7 +15,11 @@ function Fave() {
             .pause(750)
             .type("hope you forgive me for not calling you till now?", { speed: 10, })
             .break()
-            .type("I wanted to do something different this time around but nepa didn't let me complete it...");
+            .break()
+            .type("I wanted to do something different this time around but nepa didn't let me complete it...")
+            .pause(550)
+            .delete(800)
+            .type("HAPPY BIRTHDAY SUGAR MUMMY!!!")
 
           return instance;
         }}
